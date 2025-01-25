@@ -15,13 +15,13 @@
 flowchart TD
     Start([Start]) --> B[Generate a random number within range]
     B --> C[Prompt user to guess a number]
-    C --> D[Validate input: Is it a number?]
-    D -- Yes --> E[Is the guess within range?]
+    C --> D{Validate input: Is it a number?}
+    D -- Yes --> E{Is the guess within range?}
     D -- No --> F[Show error: Invalid input, enter a number.]
     F --> C
     E -- No --> G[Show error: Guess out of range.]
     G --> C
-    E -- Yes --> H[Compare guess to the random number]
+    E -- Yes --> H{Compare guess to the random number}
     H -- Guess is too high --> I[Show message: Too high! Try again]
     H -- Guess is too low --> J[Show message: Too low! Try again]
     H -- Guess is correct --> K[Show message: Correctamundo! You win!]
